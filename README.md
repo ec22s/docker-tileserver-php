@@ -1,3 +1,12 @@
+# TileServer PHP in Docker
+forked from [maptiler/tileserver-php](https://github.com/maptiler/tileserver-php)
+
+[WIP] 2025年11月 サーバ起動まで確認 (Travis CI いったん保留中)
+
+以下、fork元のREADMEです
+
+---
+
 TileServer PHP: MapTiler and MBTiles maps via WMTS
 ==================================================
 

@@ -1,0 +1,11 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web
+    ports:
+      - "8888:80"
+    volumes:
+      - ./doc-root:/var/www/html
+    restart: unless-stopped
