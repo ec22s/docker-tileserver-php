@@ -1,11 +1,15 @@
 # TileServer PHP in Docker
 forked from [maptiler/tileserver-php](https://github.com/maptiler/tileserver-php)
 
-[WIP] 2025年11月 サーバ起動まで確認 (Travis CI いったん保留中)
+[WIP] 2025年11月 サーバ起動まで確認
 
 - Base container: https://github.com/ec22s/docker-php5.6-apache2
 
 - Updated to PHP 7.1
+
+- Use GitHub Actions instead of Travis CI
+
+  <a href="https://github.com/ec22s/docker-tileserver-php/actions/workflows/test.yml"><img src="https://github.com/ec22s/docker-tileserver-php/workflows/Test/badge.svg"></a>
 
 <br>
 
