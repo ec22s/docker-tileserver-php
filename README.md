@@ -5,6 +5,8 @@ forked from [maptiler/tileserver-php](https://github.com/maptiler/tileserver-php
 
 - Base container: https://github.com/ec22s/docker-php5.6-apache2
 
+- Updated to PHP 7.1
+
 <br>
 
 以下、fork元のREADMEです
