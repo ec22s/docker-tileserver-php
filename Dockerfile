@@ -18,18 +18,18 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
 
 # PHP & Extensions
 RUN DEBIAN_FRONTEND=noninteractive apt update && apt upgrade -y && apt install -y \
-    php5.6 \
-    php5.6-bcmath \
-    php5.6-curl \
-    php5.6-gd \
-    php5.6-mcrypt \
-    php5.6-mbstring \
-    php5.6-mysql \
-    php5.6-sqlite3 \
-    php5.6-soap \
-    php5.6-xml \
-    php5.6-zip \
-    php5.6-xdebug
+    php7.1 \
+    php7.1-bcmath \
+    php7.1-curl \
+    php7.1-gd \
+    php7.1-mcrypt \
+    php7.1-mbstring \
+    php7.1-mysql \
+    php7.1-sqlite3 \
+    php7.1-soap \
+    php7.1-xml \
+    php7.1-zip \
+    php7.1-xdebug
 
 COPY conf/docker-php.conf /etc/apache2/conf-available/
 COPY conf/dir.conf /etc/apache2/mods-available/
