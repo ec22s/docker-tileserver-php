@@ -33,7 +33,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && apt upgrade -y && apt install -
 
 COPY conf/docker-php.conf /etc/apache2/conf-available/
 COPY conf/dir.conf /etc/apache2/mods-available/
-COPY conf/php5.6.conf /etc/apache2/mods-available/
+COPY conf/php7.1.conf /etc/apache2/mods-available/
 
 RUN a2enconf docker-php && a2enmod rewrite
 

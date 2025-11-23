@@ -5,7 +5,7 @@ forked from [maptiler/tileserver-php](https://github.com/maptiler/tileserver-php
 
 - Base container: https://github.com/ec22s/docker-php5.6-apache2
 
-- Updated to PHP 7.1
+- Upgraded to PHP 7.1
 
 - Use GitHub Actions instead of Travis CI
 
