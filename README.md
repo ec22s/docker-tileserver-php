@@ -3,6 +3,10 @@ forked from [maptiler/tileserver-php](https://github.com/maptiler/tileserver-php
 
 [WIP] 2025年11月 サーバ起動まで確認 (Travis CI いったん保留中)
 
+- Base container: https://github.com/ec22s/docker-php5.6-apache2
+
+<br>
+
 以下、fork元のREADMEです
 
 ---
