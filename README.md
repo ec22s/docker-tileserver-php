@@ -48,11 +48,11 @@ make up
 
   - 地図表示では、普通のオンライン地図を背景としてローカルの `mbtiles` がオーバーレイされ、オーバーレイの濃度を変えられる
 
-  - TODO: ここにスクショを挿入
+    <img width=512 src="https://github.com/user-attachments/assets/7d9dd4d0-b11f-4b9a-8e09-27360363751f" />
 
 - ファイル名に空白があると正常に動作しません (サムネはでき、クリックするとファイルの地図データの位置に合わせて背景のオンライン地図が出る)
 
-  - TODO: ここにスクショを挿入
+  <img width=512 src="https://github.com/user-attachments/assets/253412c1-a05f-4402-95b4-fb6c7b04fc3c" />
 
 <br>
 
