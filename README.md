@@ -1,15 +1,58 @@
 # TileServer PHP in Docker
-forked from [maptiler/tileserver-php](https://github.com/maptiler/tileserver-php)
 
-[WIP] 2025年11月 サーバ起動まで確認
+<a href="https://github.com/ec22s/docker-tileserver-php/actions/workflows/test.yml"><img src="https://github.com/ec22s/docker-tileserver-php/workflows/Test/badge.svg"></a>
 
-- Base container: https://github.com/ec22s/docker-php5.6-apache2
+### Forked from [maptiler/tileserver-php](https://github.com/maptiler/tileserver-php)
 
-- Upgraded to PHP 7.1
+- Changes:
 
-- Use GitHub Actions instead of Travis CI
+  - Containerization using Docker
 
-  <a href="https://github.com/ec22s/docker-tileserver-php/actions/workflows/test.yml"><img src="https://github.com/ec22s/docker-tileserver-php/workflows/Test/badge.svg"></a>
+    - Based https://github.com/ec22s/docker-php5.6-apache2 and upgraded to PHP 7.1
+
+  - Use GitHub Actions instead of Travis CI
+
+  - and WIP...
+
+<br>
+
+### 2025年12月 下記の手順でローカルファイルの `mbtiles` を表示できること確認
+
+```shell
+cd doc-root
+wget https://github.com/klokantech/tileserver-php/releases/download/v0.1/grandcanyon.mbtiles
+make up
+# open http://localhost:8888
+```
+- 地図データのURLはフォーク元の `.travis.yml` にあったもの
+
+<br>
+
+### 動作確認環境
+
+- macOS 15.6 (24G84)
+
+- GNU bash, version 5.3.3(1)-release (x86_64-apple-darwin23.6.0)
+
+- Docker version 29.0.0, build 3d4129b9ea
+
+- Docker Compse version v2.40.3-desktop.1
+
+<br>
+
+### 確認した動き
+
+- ブラウザがページを読み込む時、`doo/root/` 下の `mbtiles` ファイルが認識される (サーバ再起動不要)
+
+- `mbtiles` が一つだと自動的に地図表示に、複数あるとサムネイルでの選択画面になる
+
+  - 地図表示では、普通のオンライン地図を背景としてローカルの `mbtiles` がオーバーレイされ、オーバーレイの濃度を変えられる
+
+  - TODO: ここにスクショを挿入
+
+- ファイル名に空白があると正常に動作しません (サムネはでき、クリックするとファイルの地図データの位置に合わせて背景のオンライン地図が出る)
+
+  - TODO: ここにスクショを挿入
 
 <br>
 
@@ -119,7 +162,7 @@ Supported protocols:
   Exposed at http://[...]/layer/z/x/y.pbf
 
 - Retina / HighDPI routing with 512 tiles
-Use @2x suffix in url for JSONs and tiles. For example http://tileserver.maptiler.com/grandcanyon@2x.json  
+Use @2x suffix in url for JSONs and tiles. For example http://tileserver.maptiler.com/grandcanyon@2x.json
 
 To use the OGC WMTS standard, point your client (desktop or web) to the URL of 'directory' where you installed tileserver.php project with suffix "wmts".
 For example: http://www.example.com/directory/wmts
@@ -230,7 +273,7 @@ Tested WMTS/TMS clients
   http://www.thecarbonproject.com/gaia.php
 - MapBox.js - the loading of maps via TileJSON, interaction layer supported
   https://www.mapbox.com/mapbox.js
-  
+
 Alternative
 -----------
 
