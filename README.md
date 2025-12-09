@@ -24,7 +24,28 @@ wget https://github.com/klokantech/tileserver-php/releases/download/v0.1/grandca
 make up
 # open http://localhost:8888
 ```
-- 地図データのURLはフォーク元の `.travis.yml` にあったもの
+- データのURLはフォーク元の `.travis.yml` にあったもの
+
+- 中身の仕様は以下のとおりラスタデータ 
+  ```
+  $ mbtiles meta-all grandcanyon.mbtiles 
+  id: grandcanyon
+  tile_info:
+    format: png
+    encoding: ''
+  layer_type: overlay
+  tilejson:
+    tilejson: 3.0.0
+    tiles: []
+    bounds:
+    - -112.261791
+    - 35.983744
+    - -112.113981
+    - 36.132062
+    name: AZ_Grand_Canyon_1988_geo
+    version: '1'
+    format: png
+  ```
 
 <br>
 
@@ -50,9 +71,22 @@ make up
 
     <img width=512 src="https://github.com/user-attachments/assets/7d9dd4d0-b11f-4b9a-8e09-27360363751f" />
 
-- ファイル名に空白があると正常に動作しません (サムネはでき、クリックするとファイルの地図データの位置に合わせて背景のオンライン地図が出る)
+- ファイル名に空白があると正常に動作しない (サムネはでき、クリックするとファイルの地図データの位置に合わせて背景のオンライン地図が出る)
 
   <img width=512 src="https://github.com/user-attachments/assets/253412c1-a05f-4402-95b4-fb6c7b04fc3c" />
+
+- ファイルがベクタタイルでも一応読み込まれるが、サムネは全世界になり、スタイルもほぼ当てられない
+
+  <img height=384 src="https://github.com/user-attachments/assets/77302f49-c268-42a1-97d7-b9480629f176" />　
+  <img height=384 src="https://github.com/user-attachments/assets/56b846ef-bc93-4ea3-8a7b-1eb606509013" />
+
+- ベクタタイルにスタイルを当てられれば実用性が大きく増すはず
+
+  - ズームレベルに応じて表示する地物の詳細度が変わる (ベクタだから当然)
+
+  - 右側ペインでOpenLayers 3を選ぶと、背景のオンライン地図を表示することも可 (左下のチェックボックス)
+
+  - 描画速度はMapbox GLの方が速い
 
 <br>
 
