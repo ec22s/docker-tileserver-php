@@ -90,6 +90,55 @@ make up
 
 <br>
 
+### 拡張に向けたメモ (2025年12月)
+
+- 地図本体は https://github.com/klokantech/cdn.klokantech.com/blob/gh-pages/tileviewer/v1 の `index.js` `index.css` を用い、設定ファイルの `index.json` をPHPが動的生成してタイルとグリッドをlocalhostに向けている
+
+- `index.js` から OpenLayers 3 または Mapbox GL のJSライブラリ等が呼ばれている. 以上の部分はローカル (オフライン) 化されていない
+
+- `index.json` には `mbtiles` のメタデータも入る. 例えばラスタとベクタの2地図がある場合
+
+  ```
+  [
+    {
+      "name":"AZ_Grand_Canyon_1988_geo",
+      "type":"overlay",
+      "format":"png",
+      "tiles":[
+        "http://localhost:8888/grandcanyon/{z}/{x}/{y}.png"
+      ],
+      ...
+    },
+    {
+      "name":"OpenMapTiles",
+      "type":"baselayer",
+      "format":"pbf",
+      "tiles":[
+        "http://localhost:8888/zurich_switzerland/{z}/{x}/{y}.pbf"
+      ],
+      ...
+    }
+  ]
+  ```
+
+- PHP (とApache) の主な処理はタイルとグリッドのxzyリクエストに対しレスポンスを返すこと
+
+  - その際にSQLiteで `mbtiles` を処理しているはず
+ 
+- 他の言語・Webでも同様に `index.json` 生成とタイル等リクエストへの応答ができれば移植可能と思われる
+
+- より原始的な例 https://github.com/klokantech/mapbox-gl-js-offline-example
+
+  - `index.html` 内のスクリプトで、同じホストのタイルを呼び出す
+ 
+  - タイルはMVT形式で低解像度な部分をスタティックに持っている
+
+<br>
+
+### TODO: 今後さらに調査
+
+<br>
+
 以下、fork元のREADMEです
 
 ---
